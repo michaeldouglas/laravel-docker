@@ -10,7 +10,7 @@ class Portal extends CI_Controller {
 		//$this->load->helper('util_helper');
 
 		// model
-		$this->load->model('Company_Model');
+		//$this->load->model('Company_Model');
 	}
 
 	/**
