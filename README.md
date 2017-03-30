@@ -1,6 +1,6 @@
-Dockerized PHP 7
+WMVisit PHP 7
 ==============================================
-This image contains:
+Documentação da plataforma WMVisit a imagem do Visit contém:
 - PHP-FPM 7.0
 - Nginx 1.10
 - Alpine Linux (Edge)
@@ -8,23 +8,8 @@ This image contains:
 - Git
 - Composer
 
-Docker Setup
+Instalação do Docker
 ----
 - [Docker for Mac](https://docs.docker.com/docker-for-mac/)
 - [Docker for Linux](https://docs.docker.com/engine/installation/linux/)
 - [Docker for Windows](https://docs.docker.com/docker-for-windows/)
-
-Usage
------
-Start the Docker containers:
-
-```bash
-docker run -p 8080:80 --name <NAME_OF_YOUR_CONTAINER> -d jlamim/php7-nginx
-```
-
-Using Composer:
-```bash
-docker run -it <NAME_OF_YOUR_CONTAINER> composer <command>
-```
-
-See the PHP info on http://localhost:8080, or the static html page on http://localhost:8080/test.html
