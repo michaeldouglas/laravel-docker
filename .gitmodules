@@ -1,0 +1,4 @@
+[submodule "application/_core"]
+  path = application/_core
+url=git@atitude.git.beanstalkapp.com:/atitude/app_core.git
+  branch = master

@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-MAINTAINER Jonathan Lamim Antunes <dev@jlamim.com.br>
+MAINTAINER Michael Douglas <michael.douglas@atitude.com.br>
 
 # Install packages
 RUN apk --update add \
@@ -25,6 +25,7 @@ RUN apk --update add \
         ca-certificates \
         nginx \
         curl \
+        bash \
         supervisor \
 
     && rm -rf /var/cache/apk/*

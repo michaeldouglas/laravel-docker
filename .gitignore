@@ -1,3 +1,15 @@
 .DS_Store
 ._*
-.vagrant
+src/.vagrant
+src/files/*
+src/application/_core/third_party/mpdf/ttfontdata/dejavusanscondensed.cw.dat
+src/application/_core/third_party/mpdf/ttfontdata/dejavusanscondensed.cw127.php
+src/application/_core/third_party/mpdf/ttfontdata/dejavusanscondensed.mtx.php
+src/application/_core/third_party/mpdf/ttfontdata/dejavusanscondensedB.cw.dat
+src/application/_core/third_party/mpdf/ttfontdata/dejavusanscondensedB.mtx.php
+src/application/_core/third_party/mpdf/ttfontdata/dejavuserifcondensed.cw127.php
+src/application/_core/third_party/mpdf/ttfontdata/dejavuserifcondensedB.cw.dat
+src/application/_core/third_party/mpdf/ttfontdata/dejavuserifcondensedB.mtx.php
+.idea/*
+src/vendor/
+src/user_guide/

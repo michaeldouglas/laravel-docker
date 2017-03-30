@@ -1,0 +1,39 @@
+{
+	"description": "WMVisit plataforma de visita online",
+	"name": "wmvisit/application",
+	"type": "project",
+	"homepage": "https://wmvisit.com",
+	"license": "MIT",
+	"support": {
+		"forum": "http://forum.codeigniter.com/",
+		"wiki": "https://github.com/bcit-ci/CodeIgniter/wiki",
+		"irc": "irc://irc.freenode.net/codeigniter",
+		"source": "https://github.com/bcit-ci/CodeIgniter"
+	},
+	"authors": [{
+		"name": "Michael Douglas Barbosa Araujo",
+		"email": "michael.douglas@atitude.com.br"
+	}],
+	"require": {
+		"php": ">=5.2.4"
+	},
+	"suggest": {
+		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
+	},
+	"require-dev": {
+		"mikey179/vfsStream": "1.1.*",
+		"phpunit/phpunit": "~4.8|~5.2"
+	},
+	"autoload": {
+		"psr-4":{
+			"Atitude\\Visit\\": "lib/"
+    	}
+  	},
+  	"scripts": {
+    	"test": "phpunit -c phpunit.xml tests/unit"
+  	},
+  	"config":{
+    	"bin-dir": "bin/"
+  	},
+  	"minimum-stability": "dev"
+}
