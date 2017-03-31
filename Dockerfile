@@ -1,56 +1,67 @@
-FROM alpine:edge
+FROM php:7.0-fpm
 
-MAINTAINER Michael Douglas <michael.douglas@atitude.com.br>
+MAINTAINER Michael Araujo <michaeldouglas010790@gmail.com>
 
-# Install packages
-RUN apk --update add \
-        php7 \
-        php7-dom \
-        php7-fpm \
-        php7-mbstring \
-        php7-mcrypt \
-        php7-opcache \
-        php7-pdo \
-        php7-pdo_mysql \
-        php7-pdo_pgsql \
-        php7-mysqli \
-        php7-xml \
-        php7-phar \
-        php7-openssl \
-        php7-json \
-        php7-ctype \
-        php7-session \
-        nodejs \
-        git \
-        ca-certificates \
-        nginx \
-        curl \
-        bash \
-        supervisor \
+ENV TERM xterm
+ENV HOME /var/www/
 
-    && rm -rf /var/cache/apk/*
+# Instalação da máquina
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    curl \
+    libjpeg-dev \
+    libpng12-dev \
+    libfreetype6-dev \
+    libssl-dev \
+    libmcrypt-dev \
+    nginx \
+    --no-install-recommends
 
-# Creating symbolic link to php
-RUN ln -s /usr/bin/php7 /usr/bin/php
+# configure gd library
+RUN docker-php-ext-configure gd \
+    --enable-gd-native-ttf \
+    --with-jpeg-dir=/usr/lib \
+    --with-freetype-dir=/usr/include/freetype2
 
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+# Install mongodb, xdebug
+RUN pecl install mongodb \
+    && pecl install xdebug \
+    && docker-php-ext-enable xdebug
 
-# Configure Nginx
+# Install extensions using the helper script provided by the base image
+RUN docker-php-ext-install \
+    mcrypt \
+    pdo_mysql \
+    pdo_pgsql \
+    gd \
+    zip
+
+# Install other tools
+RUN apt-get install supervisor net-tools vim -y
+
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN usermod -u 1000 www-data
+
+COPY config/laravel/laravel.ini /usr/local/etc/php/conf.d
+COPY config/laravel/laravel.pool.conf /usr/local/etc/php-fpm.d/
 COPY config/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY config/nginx/default /etc/nginx/sites-enabled/default
+COPY config/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY config/supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Configure PHP-FPM
-COPY config/php/php.ini /etc/php7/conf.d/zzz_custom.ini
-COPY config/php/www.conf /etc/php/7.0/fpm/pool.d/www.conf
+RUN usermod -u 1000 www-data
 
-# Configure supervisord
-COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+# Informa a pasta de trabalho da aplicação
+WORKDIR $HOME/wmvisit/
 
-# Add application
-RUN mkdir -p /var/www/src
-WORKDIR /var/www/src
-COPY src/ /var/www/src/
+# Retorna para o usuário root
+USER root
+
+# Copia a aplicação
+COPY ./ $HOME/wmvisit/
+
+# Default command
+CMD ["/usr/bin/supervisord"]
 
 EXPOSE 80 443
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
