@@ -20,11 +20,13 @@
         "phpunit/phpunit": "~5.7"
     },
     "autoload": {
+        "files": ["app/Http/Helpers.php"],
         "classmap": [
             "database"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "wmvisit\\": "app/",
+            "Modules\\": "app/Modules"
         }
     },
     "autoload-dev": {

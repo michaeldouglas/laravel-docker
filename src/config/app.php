@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'WMVisit',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,16 +167,17 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-
+        wmvisit\Providers\AppServiceProvider::class,
+        wmvisit\Providers\AuthServiceProvider::class,
+        // wmvisit\Providers\BroadcastServiceProvider::class,
+        wmvisit\Providers\EventServiceProvider::class,
+        wmvisit\Providers\RouteServiceProvider::class,
+        wmvisit\Providers\ModulesServiceProvider::class,
     ],
 
     /*
@@ -225,7 +226,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
