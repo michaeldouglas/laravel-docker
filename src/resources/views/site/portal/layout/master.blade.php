@@ -14,6 +14,43 @@
 
     <link rel="shortcut icon" href="/img/wmvisit/favicon.png" type="image/x-icon"/>
 
+    @section('styles_default')
+        <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+        {!! Html::style('https://d6iofrior8zek.cloudfront.net/ext/font-wm/1.4/styles.css') !!}
+
+        {{-- Bootstrap --}}
+            {!! Html::style('https://d6iofrior8zek.cloudfront.net/bootstrap/3.2.0/css/bootstrap.min.css') !!}
+
+        {{-- Loading Bar --}}
+        {!! Html::style('https://d6iofrior8zek.cloudfront.net/css/plugin/angular.loading.bar/0.5.0/loading-bar.css') !!}
+
+        {{-- Animate --}}
+        {!! Html::style('https://d6iofrior8zek.cloudfront.net/ext/bootstrap/3.2.0/css/bootstrap.min.css') !!}
+
+        {{-- Verificações de Internet Explorer --}}
+
+        <!--[if (gte IE 6) & (lte IE 8)]>
+            <script src="https://d6iofrior8zek.cloudfront.net/js/commons/respond/1.4.2/respond.min.js"></script>
+
+            <link href="'https://d6iofrior8zek.cloudfront.net/js/commons/respond/1.4.2/respond-proxy.html" id="respond-proxy" rel="respond-proxy"/>
+
+            <link href="'https://d6iofrior8zek.cloudfront.net/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect"/>
+            <script src="'https://d6iofrior8zek.cloudfront.net/js/respond.proxy.js"></script>
+        <![endif]-->
+
+        <!--[if lt IE 9]>
+            <script src="https://d6iofrior8zek.cloudfront.net/js/plugin/json3/3.2.6/json3.min.js"></script>
+            <script src="https://d6iofrior8zek.cloudfront.net/js/plugin/html5shiv/html5shiv.3.7.0.min.js"></script>
+            <script src="https://d6iofrior8zek.cloudfront.net/js/plugin/ie.polyfills/1.0.0/polyfills.min.js"></script>
+        <![endif]-->
+    @show
+
+    @section('styles_layout')
+        {!! Html::style(elixir('css/style.css')) !!}
+    @show
+
     @if ($company)
         <!-- @TODO: <link href=" site_url() service/personalize/css/ company.id / version " rel="stylesheet" type="text/css"> -->
     @endif
@@ -59,10 +96,27 @@
 </div>
 
     <!-- Chama dos JS principais do site -->
-    @include('site.portal.structure.js')
-    @include('site.portal.structure.js')
+    @section('scripts_default')
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/js/framework/angular/1.2.20/angular.min.js') !!}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/js/plugin/angular.translate/2.2.0/angular-translate.min.js') !!}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/js/plugin/angular.loading.bar/0.5.0/loading-bar.js') !!}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/js/plugin/angular.loading.bar/0.5.0/loading-bar.js') !!}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/js/plugin/angular.scroll/angular-scroll.min.js') !!}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/js/plugin/angular.focus-if/focusIf.min.js') !!}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/plugins/sawpf/sawpf.min.1.0.js') !!}
+    @show
 
-    <script type="text/javascript" src="wmvisit-portal.js"></script>
+    @section('scripts_layout')
+        {{-- @TODO: Rever se realmente esses scripts são necessários --}}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/js/framework/angular/1.2.20/angular.min.js') !!}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/js/plugin/angular.translate/2.2.0/angular-translate.min.js') !!}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/js/plugin/angular.loading.bar/0.5.0/loading-bar.js') !!}
+        {!! HTML::script('https://d6iofrior8zek.cloudfront.net/plugins/sawpf/sawpf.min.1.0.js') !!}
+    @show
 
+    @section('scripts_portal_default')
+        {!! HTML::script(elixir('js/main.js')) !!}
+        {!! HTML::script(elixir('js/wmvisit-portal.js')) !!}
+    @show
 </body>
 </html>

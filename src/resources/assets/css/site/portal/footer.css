@@ -1,0 +1,157 @@
+.footer {
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.footer .items {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: 0;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.footer .item {
+    display: inline-block;
+    text-align: center;
+    padding: 9px 24px;
+    font-size: 0.85em;
+}
+
+.footer .item.btn-top {
+    border-left: 1px solid #e6e6e6;
+}
+
+.footer .item a {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.footer .item a:hover {
+    text-decoration: none;
+}
+
+.footer .item.btn-top {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+}
+
+.footer .item.btn-top .label {
+    color: #bfbfbf;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px
+}
+
+.footer .item.btn-top .icon-angle-up {
+    color: #FFF;
+    text-align: center;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.footer .item:first-child {
+    padding-left: 0;
+}
+
+.footer .copyright {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #8a9199;
+    font-size: 1em;
+    font-family: 'Open sans', sans-serif;
+}
+
+/* Quando é empresa */
+.company .apps .icons {
+    margin-top: 10px;
+}
+
+.company .apps .icons a {
+    background: url(//d6iofrior8zek.cloudfront.net/img/wmvisit/portal/icons-stores.jpg) no-repeat;
+    width: 56px;
+    height: 56px;
+    display: inline-block;
+}
+
+.company .apps .icons .apple {
+    background-position: 0 0;
+    margin-right: 10px;
+}
+
+.company .apps .icons .android {
+    background-position: -66px 0;
+}
+
+.company .footer {
+    padding-top: 0;
+    padding-bottom: 0px;
+}
+
+.company .footer .item-nav {
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.company .footer .items li a {
+    text-align: left;
+    text-transform: uppercase;
+    display: block;
+    padding-bottom: 8px
+}
+
+.company .footer .title {
+    display: block;
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #8a9199;
+}
+
+.company .support-phone span {
+    display: block;
+
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+}
+
+.company .item-nav {
+    background: #FFF;
+}
+
+.company .footer .copyright {
+    border-top: none;
+}
+
+@media (max-width: 767px) {
+    .company .apps {
+        margin-bottom: 30px;
+    }
+
+
+    .company .apps .icons {
+        text-align: center;
+    }
+
+    .company .footer .title,
+    .company .footer .items li a,
+    .company .support-phone span {
+        text-align: center;
+    }
+
+    .company .support-phone span {
+        padding-bottom: 10px;
+    }
+}

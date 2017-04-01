@@ -1,0 +1,177 @@
+.header {
+    width: 100%;
+}
+.header [class^='col-'] a {
+    overflow: hidden;
+}
+
+.header .logo {
+    height: 50px;
+}
+
+.header .col-md-7,
+.header .col-lg-7 {
+    text-align: left;
+}
+
+.header .dropdown-language:first-child {
+    margin-left: 0;
+}
+
+.header .dropdown-language,
+.header .dropdown-help,
+.header .phone-support,
+.header .admin-system {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    margin-left: 40px;
+}
+
+.header .dropdown-language,
+.header .dropdown-help,
+.header .phone-support a,
+.header .admin-system {
+    color: #fff;
+    font-size: 1.07em;
+}
+
+.header .phone-support a:hover,
+.header .admin-system:hover {
+    text-decoration: none;
+    color: #999;
+}
+
+/* Language && Help and Support */
+.header .dropdown,
+.header .dropdown .dropdown-menu {
+    text-align: left;
+}
+
+.header .dropdown {
+    border-radius: 0;
+    border-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    cursor: pointer;
+    margin-top: 12px;
+    padding-bottom: 16px;
+}
+
+.header .dropdown:hover {
+    border-bottom: 5px solid #00ACD4;
+}
+
+.header .dropdown .dropdown-menu {
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+    background-clip: initial;
+    padding: 0;
+    border: 1px solid #CCC;
+    font-size: 1em;
+    border-radius: 0 0 3px 3px;
+    min-width: 58px;
+}
+
+.header .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 5px;
+}
+
+.header .dropdown .dropdown-menu .item {
+    border: none;
+    font-size: 1em;
+    color: #666;
+    font-weight: normal;
+    font-family: 'Open Sans',sans-serif;
+    text-transform: none;
+    display: block;
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #FFF;
+}
+
+.header .dropdown .dropdown-menu .item.bg-color-1,
+.header .dropdown .dropdown-menu .item:hover {
+    color: #fff;
+}
+
+/* Telefone de suporte */
+.header .phone-support {
+    margin-top: 12px;
+}
+
+/* Area ADM */
+.header .admin-system {
+    border: 2px solid #fff;
+    padding: 10px 40px;
+    border-radius: 2px;
+}
+
+.header .admin-system:hover {
+    background-color: #fff;
+}
+
+/* Header Fixed */
+.header.fixed {
+    background-color: #FFF;
+    position: fixed;
+    top: 0;
+    padding: 20px 0;
+    height: 80px;
+    z-index: 10001;
+    width: 100%;
+    box-shadow: 0 -3px 15px #666;
+}
+
+.header.fixed + .main {
+    margin-top: 0;
+}
+
+.header.fixed .logo-white {
+    display: none;
+}
+
+.header.fixed .logo-black {
+    display: block !important;
+    height: 40px;
+}
+
+.header.fixed .dropdown-language,
+.header.fixed .dropdown-help,
+.header.fixed .phone-support a,
+.header.fixed .admin-system {
+    color: #8a9199;
+}
+
+.header.fixed .admin-system:not(.color-1) {
+    display: none;
+}
+
+.header.fixed .admin-system.color-1 {
+    display: inline-block !important;
+}
+
+
+/* Quando é empresa */
+.company .header .dropdown-language,
+.company .header .dropdown-help,
+.company .header .phone-support a,
+.company .header .admin-system {
+    color: #8a9199;
+}
+
+.company .header .admin-system {
+    border: 2px solid #8a9199;
+}
+
+.company .header .admin-system:hover {
+    background-color: #8a9199;
+    color: #FFF;
+}
+
+.company .header .dropdown {
+    padding-bottom: 30px;
+}

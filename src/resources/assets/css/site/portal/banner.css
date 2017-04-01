@@ -1,0 +1,85 @@
+.module-banner {
+    background-image: url(//d6iofrior8zek.cloudfront.net/img/wmvisit/portal/banner-typing.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.module-banner .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -570px;
+    margin-top: -110px;
+    z-index: 1;
+}
+
+.module-banner .title {
+    font-size: 2.53em;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.module-banner .title strong {
+    font-weight: bold;
+}
+
+.module-banner .group-btn {
+    text-align: center;
+}
+
+.module-banner .group-btn .btn,
+.module-banner .group-btn .test {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.14em;
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: top;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+.module-banner .group-btn .btn {
+    margin-left: 65px;
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.module-banner .group-btn .test {
+    height: 54px;
+    line-height: 54px;
+    border: 1px solid #FFF;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.module-banner .group-btn .test:hover {
+    text-decoration: none;
+}
+
+.module-banner .group-btn .icon-cog-gear {
+    font-size: 1.5em;
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 2.5;
+}
+
+.module-banner .group-btn .test .text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/* Marcara preta em cima da imagem */
+.module-banner .mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
