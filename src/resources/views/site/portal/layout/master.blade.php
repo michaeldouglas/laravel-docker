@@ -21,7 +21,7 @@
         {!! Html::style('https://d6iofrior8zek.cloudfront.net/ext/font-wm/1.4/styles.css') !!}
 
         {{-- Bootstrap --}}
-            {!! Html::style('https://d6iofrior8zek.cloudfront.net/bootstrap/3.2.0/css/bootstrap.min.css') !!}
+            {!! Html::style(elixir('css/bootstrap.min.css')) !!}
 
         {{-- Loading Bar --}}
         {!! Html::style('https://d6iofrior8zek.cloudfront.net/css/plugin/angular.loading.bar/0.5.0/loading-bar.css') !!}
@@ -115,7 +115,6 @@
     @show
 
     @section('scripts_portal_default')
-        {!! HTML::script(elixir('js/main.js')) !!}
         {!! HTML::script(elixir('js/wmvisit-portal.js')) !!}
     @show
 </body>

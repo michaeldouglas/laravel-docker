@@ -31,9 +31,12 @@ mix.styles([
     'resources/assets/css/site/portal/responsive.css'
 ], 'public/css/style.css');
 
+
+mix.styles('resources/assets/css/bootstrap/bootstrap.css' ,'public/css/bootstrap.min.css');
 // Scripts do Layout do Visit
-mix.js('resources/assets/js/site/portal/main.js', 'public/js/main.js');
+/*
 mix.js([
+    resources/assets/js/site/portal/main.js,
     'resources/assets/js/site/portal/services/language.js',
     'resources/assets/js/site/portal/controllers/portal.js',
     'resources/assets/js/site/portal/controllers/language.js',
@@ -43,4 +46,4 @@ mix.js([
     'resources/assets/js/site/portal/controllers/contact.js',
     'resources/assets/js/site/portal/controllers/footer.js',
     'resources/assets/js/site/portal/controllers/menu-mobile.js'
-], 'public/js/wmvisit-portal.js');
+], 'public/js/wmvisit-portal.js');*/
