@@ -1,12 +1,9 @@
-WMVisit PHP 7
+Docker Laravel PHP 7
 ==============================================
-Documentação da plataforma WMVisit a imagem do Visit contém:
+A imagem contém:
 - PHP-FPM 7.0
 - Nginx 1.10
-- Alpine Linux (Edge)
-- NodeJS
-- Git
-- Composer
+- Laravel
 
 Instalação do Docker
 ----

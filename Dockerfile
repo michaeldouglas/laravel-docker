@@ -53,13 +53,13 @@ COPY config/supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN usermod -u 1000 www-data
 
 # Informa a pasta de trabalho da aplicação
-WORKDIR $HOME/wmvisit/
+WORKDIR $HOME/laravel/
 
 # Retorna para o usuário root
 USER root
 
 # Copia a aplicação
-COPY ./ $HOME/wmvisit/
+COPY ./ $HOME/laravel/
 
 # Default command
 CMD ["/usr/bin/supervisord"]
